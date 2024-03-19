@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EComTest.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1147e7c800652ba17e7704bd1d25c5b449fa6c34")]
 [assembly: System.Reflection.AssemblyProductAttribute("EComTest.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EComTest.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

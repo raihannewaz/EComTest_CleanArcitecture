@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s6Gufl8iFaI+pQACSeyH953C9NYdjjS8RtBB2StpUyBgWgET/KQgdBXZ7NzjAxx9cyKq4Po/FjH4FKn4xQh6ug==",
+  "dgSpecHash": "j/vF/mthHIYduL9xknL89i9+cLsoyM70QzYF+YySdBrIE95z6oBBLE0B7hFHAw7q+akggCJRxHqfiGKCPBTUGQ==",
   "success": true,
-  "projectFilePath": "D:\\Raihan\\EComTest.Application\\EComTest.Application.csproj",
+  "projectFilePath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Application\\EComTest.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sys-05\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Sys-05\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

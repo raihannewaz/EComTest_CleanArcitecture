@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Raihan\\EComTest.Api\\",
+  "WorkspaceRootPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00745BB9-0BBE-49F3-AEE3-49D4930CB43F}|..\\EComTest.Domain\\EComTest.Domain.csproj|d:\\raihan\\ecomtest.domain\\orderentity\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Raihan\\EComTest.Domain\\OrderEntity\\Order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_TIHHKTO/EComTestDB/True/SqlTable/dbo.Categories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -35,8 +35,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TIHHKTO/EComTestDB/True/SqlTable/dbo.Products.sql",
               "ToolTip": "dbo.Products [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-19T09:28:05.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T09:28:05.661Z"
             },
             {
               "$type": "Document",
@@ -45,8 +44,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TIHHKTO/EComTestDB/True/SqlTable/dbo.Orders.sql",
               "ToolTip": "dbo.Orders [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-19T09:28:04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T09:28:04Z"
             },
             {
               "$type": "Document",
@@ -55,18 +53,17 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_TIHHKTO/EComTestDB/True/SqlTable/dbo.Categories.sql",
               "ToolTip": "dbo.Categories [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-03-19T09:28:01.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-19T09:28:01.881Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Raihan\\EComTest.Domain\\OrderEntity\\Order.cs",
-              "RelativeDocumentMoniker": "..\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "RelativeDocumentMoniker": "..\\..\\EComTest.Domain\\OrderEntity\\Order.cs",
               "ToolTip": "D:\\Raihan\\EComTest.Domain\\OrderEntity\\Order.cs",
-              "RelativeToolTip": "..\\EComTest.Domain\\OrderEntity\\Order.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADwAAAA1AAAA",
+              "RelativeToolTip": "..\\..\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-19T07:37:25.813Z",
               "EditorCaption": ""

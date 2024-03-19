@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hBVmvegLu1gzOvT5jDWJS92TFjuFSLENd0moaH88rC/TRMfdC9sR0J27VoBYij9a4F/ISr4fvLfJYN3Xq5RUZA==",
+  "dgSpecHash": "gIvpaE58hTy5EcKkZm2sm2hP3wQk/wtWTC6MTyXh4JLIVNvDmt9n5LEY2kEXNacDYcy4An1GratMjB2b9LEnSA==",
   "success": true,
-  "projectFilePath": "D:\\Raihan\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
+  "projectFilePath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sys-05\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Sys-05\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

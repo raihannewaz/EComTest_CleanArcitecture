@@ -126,11 +126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Raihan\\EComTest.Domain\\EComTest.Domain.csproj",
+      "projectUniqueName": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Domain\\EComTest.Domain.csproj",
       "projectName": "EComTest.Domain",
-      "projectPath": "D:\\Raihan\\EComTest.Domain\\EComTest.Domain.csproj",
+      "projectPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Domain\\EComTest.Domain.csproj",
       "packagesPath": "C:\\Users\\Sys-05\\.nuget\\packages\\",
-      "outputPath": "D:\\Raihan\\EComTest.Domain\\obj\\",
+      "outputPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

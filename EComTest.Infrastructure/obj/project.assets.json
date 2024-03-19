@@ -4210,11 +4210,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Raihan\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
       "projectName": "EComTest.Infrastructure",
-      "projectPath": "D:\\Raihan\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
+      "projectPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Sys-05\\.nuget\\packages\\",
-      "outputPath": "D:\\Raihan\\EComTest.Infrastructure\\obj\\",
+      "outputPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4236,8 +4236,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Raihan\\EComTest.Application\\EComTest.Application.csproj": {
-              "projectPath": "D:\\Raihan\\EComTest.Application\\EComTest.Application.csproj"
+            "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Application\\EComTest.Application.csproj": {
+              "projectPath": "D:\\Raihan\\EComTest_CleanArcitecture\\EComTest.Application\\EComTest.Application.csproj"
             }
           }
         }
