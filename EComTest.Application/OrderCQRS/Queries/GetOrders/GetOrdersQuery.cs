@@ -14,5 +14,8 @@ namespace EComTest.Application.OrderCQRS.Queries.GetOrders
                                     FROM Orders o
                                     INNER JOIN Products p ON o.ProductId = p.ProductId
                                     INNER JOIN Categories c ON p.CategoryId = c.CategoryId";
+
+
+        public string storeProc = "EXEC GetOrdersQuery";
     }
 }

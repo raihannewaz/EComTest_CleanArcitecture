@@ -10,9 +10,16 @@ namespace EComTest.Application.CategoryCQRS.Queries.GetCategories
 {
     public class GetCategoryQueryHandler : IRequestHandler<GetCategoryQuery, List<Category>>
     {
-        public Task<List<Category>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+        private readonly ICategoryRepository _categoryRepository;
+
+        public GetCategoryQueryHandler(ICategoryRepository categoryRepository)
         {
-            throw new NotImplementedException();
+            _categoryRepository = categoryRepository;
+        }
+
+        public async Task<List<Category>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+        {
+            return await _categoryRepository.GetAll(request.sqlProc);
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using EComTest.Domain.OrderEntity;
+using EComTest.Domain.ProductEntity;
 using EComTest.Infrastructure.Data;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -14,15 +16,16 @@ namespace EComTest.Infrastructure.Order
     public class OrderRepository : IOrderRepository
     {
         private readonly ApplicationDbContext _context;
+        private readonly IProductRepository _productRepository;
 
-        public OrderRepository(ApplicationDbContext context)
+        public OrderRepository(ApplicationDbContext context, IProductRepository product)
         {
             _context = context;
+            _productRepository = product;
         }
 
         public async Task<Domain.OrderEntity.Order> CreateAsync(Domain.OrderEntity.Order order)
         {
-            
 
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
@@ -43,15 +46,36 @@ namespace EComTest.Infrastructure.Order
 
         public async Task<List<Domain.OrderEntity.Order>> GetAll(string a)
         {
-            return await _context.Orders.FromSqlRaw(a)
-              .Include(o => o.Product)
-                  .ThenInclude(p => p.Category)
-              .ToListAsync();
+
+            var orders = await _context.Orders.FromSqlRaw(a).ToListAsync();
+
+            foreach (var order in orders)
+            {
+                await _context.Entry(order).Reference(o => o.Product).Query().Include(p => p.Category).ToListAsync();
+            }
+
+            return orders;
+
         }
 
         public async Task<Domain.OrderEntity.Order> GetById(int id)
         {
             return await _context.Orders.Include(p=>p.Product).FirstOrDefaultAsync(a=>a.OrderId == id);
+        }
+
+        public async Task<List<Domain.OrderEntity.Order>> GetByIdForQuery(string a, int id)
+        {
+
+            var orders = await _context.Orders.FromSqlRaw(a + " " + id).ToListAsync();
+
+            foreach (var order in orders)
+            {
+                await _context.Entry(order).Reference(o => o.Product).Query().Include(p => p.Category).ToListAsync();
+            }
+
+            return orders;
+
+
         }
 
         public async Task<int> UpdateAsync(int id, Domain.OrderEntity.Order updateOrder)
@@ -63,12 +87,14 @@ namespace EComTest.Infrastructure.Order
                 throw new ArgumentException($"Order with ID {id} not found.");
             }
 
-            if (updateOrder.Quantity != null)
+            if (updateOrder.Quantity != 0)
             {
                 order.UpdateQuantityAndTotal(updateOrder.Quantity);
+                await order.CalculateTotalAsync(_productRepository);
             }
 
-            if (updateOrder.ProductId != null)
+
+            if (updateOrder.ProductId != 0)
             {
                 order.UpdateProductId(updateOrder.ProductId);
             }

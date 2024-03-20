@@ -3,11 +3,26 @@
   "WorkspaceRootPath": "D:\\Raihan\\EComTest.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEC7D062-A2B6-49E1-B6C5-AD3C64C0C007}|..\\EComTest.Application\\EComTest.Application.csproj|d:\\raihan\\ecomtest.application\\ordercqrs\\queries\\getorderbyid\\getorderbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEC7D062-A2B6-49E1-B6C5-AD3C64C0C007}|..\\EComTest.Application\\EComTest.Application.csproj|d:\\raihan\\ecomtest.application\\configureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B63D859-AACE-4F90-8697-E8C72E7212E2}|..\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj|d:\\raihan\\ecomtest.infrastructure\\configureservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB9641FC-054B-41A8-9C4A-F864D8B481AC}|EComTest.Api.csproj|d:\\raihan\\ecomtest.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB9641FC-054B-41A8-9C4A-F864D8B481AC}|EComTest.Api.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEC7D062-A2B6-49E1-B6C5-AD3C64C0C007}|..\\EComTest.Application\\EComTest.Application.csproj|d:\\raihan\\ecomtest.application\\categorycqrs\\command\\createcategory\\createcategorycommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B63D859-AACE-4F90-8697-E8C72E7212E2}|..\\EComTest.Infrastructure\\EComTest.Infrastructure.csproj|d:\\raihan\\ecomtest.infrastructure\\order\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00745BB9-0BBE-49F3-AEE3-49D4930CB43F}|..\\EComTest.Domain\\EComTest.Domain.csproj|d:\\raihan\\ecomtest.domain\\productentity\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00745BB9-0BBE-49F3-AEE3-49D4930CB43F}|..\\EComTest.Domain\\EComTest.Domain.csproj|d:\\raihan\\ecomtest.domain\\orderentity\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +32,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 738,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -25,28 +40,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateCategoryCommandHandler.cs",
-              "DocumentMoniker": "D:\\Raihan\\EComTest.Application\\CategoryCQRS\\Command\\CreateCategory\\CreateCategoryCommandHandler.cs",
-              "RelativeDocumentMoniker": "..\\EComTest.Application\\CategoryCQRS\\Command\\CreateCategory\\CreateCategoryCommandHandler.cs",
-              "ToolTip": "D:\\Raihan\\EComTest.Application\\CategoryCQRS\\Command\\CreateCategory\\CreateCategoryCommandHandler.cs",
-              "RelativeToolTip": "..\\EComTest.Application\\CategoryCQRS\\Command\\CreateCategory\\CreateCategoryCommandHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAqAAAA",
+              "DocumentIndex": 0,
+              "Title": "GetOrderByIdQuery.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Application\\OrderCQRS\\Queries\\GetOrderById\\GetOrderByIdQuery.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Application\\OrderCQRS\\Queries\\GetOrderById\\GetOrderByIdQuery.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Application\\OrderCQRS\\Queries\\GetOrderById\\GetOrderByIdQuery.cs",
+              "RelativeToolTip": "..\\EComTest.Application\\OrderCQRS\\Queries\\GetOrderById\\GetOrderByIdQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T03:04:12.005Z",
+              "WhenOpened": "2024-03-20T07:04:00.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ConfigureService.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Application\\ConfigureService.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Application\\ConfigureService.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Application\\ConfigureService.cs",
+              "RelativeToolTip": "..\\EComTest.Application\\ConfigureService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T07:01:43.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConfigureServices.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Infrastructure\\ConfigureServices.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Infrastructure\\ConfigureServices.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Infrastructure\\ConfigureServices.cs",
+              "RelativeToolTip": "..\\EComTest.Infrastructure\\ConfigureServices.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T07:01:35.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Infrastructure\\Order\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Infrastructure\\Order\\OrderRepository.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Infrastructure\\Order\\OrderRepository.cs",
+              "RelativeToolTip": "..\\EComTest.Infrastructure\\Order\\OrderRepository.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADUAAAByAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:59:20.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Domain\\ProductEntity\\Product.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Domain\\ProductEntity\\Product.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Domain\\ProductEntity\\Product.cs",
+              "RelativeToolTip": "..\\EComTest.Domain\\ProductEntity\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:50:36.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Raihan\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "RelativeDocumentMoniker": "..\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "ToolTip": "D:\\Raihan\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "RelativeToolTip": "..\\EComTest.Domain\\OrderEntity\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:50:35.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\Raihan\\EComTest.Api\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
               "ToolTip": "D:\\Raihan\\EComTest.Api\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Controllers\\OrderController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAACQAAABNAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwCkAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T03:02:54.294Z",
+              "WhenOpened": "2024-03-20T06:46:13.42Z",
               "EditorCaption": ""
             }
           ]

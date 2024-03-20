@@ -5,5 +5,6 @@ namespace EComTest.Application.CategoryCQRS.Queries.GetCategories
 {
     public class GetCategoryQuery : IRequest<List<Category>>
     {
+        public string sqlProc = "EXEC GetCategories";
     }
 }

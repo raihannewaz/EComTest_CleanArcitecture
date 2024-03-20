@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.CategoryCQRS.Queries.GetCategoryById
 {
-    public class GetCategoryByIdQuery : IRequest<Category>
+    public class GetCategoryByIdQuery : IRequest<List<Category>>
     {
         public int CatId { get; set; }
+
+        public string sqlProc = "EXEC GetCategoryById";
     }
 }

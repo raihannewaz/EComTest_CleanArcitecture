@@ -20,7 +20,7 @@ namespace EComTest.Domain.OrderEntity
 
         public int ProductId { get; private set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public Product? Product { get; set; }
 
 
@@ -53,6 +53,7 @@ namespace EComTest.Domain.OrderEntity
 
 
 
+
         public void UpdateOrder(int orderid, int quantity, int productId)
         {
 
@@ -64,11 +65,7 @@ namespace EComTest.Domain.OrderEntity
 
         public void UpdateQuantityAndTotal(int quantity)
         {
-            if (quantity != null)
-            {
-                Quantity = quantity;
-
-            }
+            Quantity = quantity;
         }
 
         public void UpdateProductId(int productid)

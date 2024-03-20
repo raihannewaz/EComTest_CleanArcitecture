@@ -10,6 +10,8 @@ using EComTest.Application.ProductCQRS.Queries.GetProducts;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace EComTest.Api.Controllers
 {
@@ -27,19 +29,35 @@ namespace EComTest.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+
             var data = await _mediatr.Send(new GetOrdersQuery());
-            return Ok(data);
+            var json = JsonSerializer.Serialize(data, options);
+            return Ok(json);
+
+
+            //var data = await _mediatr.Send(new GetOrdersQuery());
+            //return Ok(data);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
+            var options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+
             var data = await _mediatr.Send(new GetOrderByIdQuery() { OrdId = id });
             if (data == null)
             {
                 return NotFound();
             }
-            return Ok(data);
+            var json = JsonSerializer.Serialize(data, options);
+            return Ok(json);
         }
 
 

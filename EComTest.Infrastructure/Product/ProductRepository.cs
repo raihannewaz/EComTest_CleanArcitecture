@@ -40,9 +40,22 @@ namespace EComTest.Infrastructure.Product
             return id;
         }
 
+        public async Task<List<Domain.ProductEntity.Product>> GetAll(string a)
+        {
+            var data = await _context.Products.FromSqlRaw(a).ToListAsync();
+            return data;
+        }
+
         public async Task<Domain.ProductEntity.Product> GetById(int id)
         {
             return await _context.Products.Include(c => c.Category).FirstOrDefaultAsync(p => p.ProductId == id);
+        }
+
+        public async Task<List<Domain.ProductEntity.Product>> GetByIdForQuery(string a, int id)
+        {
+            var data = await _context.Products.FromSqlRaw(a +" "+ id).ToListAsync();
+
+            return data;
         }
 
         public async Task<int> UpdateAsync(int id, Domain.ProductEntity.Product updateProduct)

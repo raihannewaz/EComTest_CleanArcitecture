@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.ProductCQRS.Queries.GetProductById
 {
-    public class GetProductByIdQuery:IRequest<Product>
+    public class GetProductByIdQuery:IRequest<List<Product>>
     {
         public int ProdId { get; set; }
+
+        public string sqlProc = "EXEC GetProductById";
     }
 }

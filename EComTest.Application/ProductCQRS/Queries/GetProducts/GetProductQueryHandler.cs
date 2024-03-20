@@ -10,9 +10,16 @@ namespace EComTest.Application.ProductCQRS.Queries.GetProducts
 {
     public class GetProductQueryHandler : IRequestHandler<GetProductQuery, List<Product>>
     {
-        public Task<List<Product>> Handle(GetProductQuery request, CancellationToken cancellationToken)
+        private readonly IProductRepository _repository;
+
+        public GetProductQueryHandler(IProductRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+        }
+
+        public async Task<List<Product>> Handle(GetProductQuery request, CancellationToken cancellationToken)
+        {
+            return await _repository.GetAll(request.sqlProc);
         }
     }
 }

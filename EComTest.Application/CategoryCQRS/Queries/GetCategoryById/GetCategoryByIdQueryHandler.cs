@@ -8,11 +8,20 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.CategoryCQRS.Queries.GetCategoryById
 {
-    public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQuery, Category>
+    public class GetCategoryByIdQueryHandler : IRequestHandler<GetCategoryByIdQuery, List<Category>>
     {
-        Task<Category> IRequestHandler<GetCategoryByIdQuery, Category>.Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
+        private readonly ICategoryRepository _categoryRepository;
+
+        public GetCategoryByIdQueryHandler(ICategoryRepository categoryRepository)
         {
-            throw new NotImplementedException();
+            _categoryRepository = categoryRepository;
         }
+
+        public async Task<List<Category>> Handle(GetCategoryByIdQuery request, CancellationToken cancellationToken)
+        {
+            return await _categoryRepository.GetByIdForQuery(request.sqlProc, request.CatId);
+        }
+
+
     }
 }

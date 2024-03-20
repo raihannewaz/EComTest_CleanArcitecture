@@ -19,7 +19,7 @@ namespace EComTest.Application.OrderCQRS.Queries.GetOrders
         }
         public async Task<List<Order>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
         {
-            return await _orderRepository.GetAll(request.sqlQuery);
+            return await _orderRepository.GetAll(request.storeProc);
         }
     }
 }

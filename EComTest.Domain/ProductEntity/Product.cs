@@ -15,7 +15,7 @@ namespace EComTest.Domain.ProductEntity
         public decimal Price { get; private set;}
         public int CategoryId { get; private set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public Category? Category { get;  set; }
 
         public virtual ICollection<Order>? Order { get; set; }

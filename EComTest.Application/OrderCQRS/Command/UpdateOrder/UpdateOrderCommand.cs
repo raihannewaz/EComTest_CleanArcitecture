@@ -9,10 +9,10 @@ namespace EComTest.Application.OrderCQRS.Command.UpdateOrder
 {
     public class UpdateOrderCommand: IRequest<int>
     {
-        public int OrderId { get; private set; }
+        public int OrderId { get; set; }
 
-        public int Quantity { get; private set; }
+        public int Quantity { get; set; }
 
-        public int ProductId { get; private set; }
+        public int ProductId { get; set; }
     }
 }

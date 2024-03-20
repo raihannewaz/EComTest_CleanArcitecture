@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.ProductCQRS.Queries.GetProductById
 {
-    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, Product>
+    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, List<Product>>
     {
-        public Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
+        private readonly IProductRepository _repository;
+
+        public GetProductByIdQueryHandler(IProductRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+        }
+
+        public async Task<List<Product>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
+        {
+            return await _repository.GetByIdForQuery(request.sqlProc, request.ProdId);
         }
     }
 }

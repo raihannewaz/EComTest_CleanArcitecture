@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EComTest.Domain.OrderEntity;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace EComTest.Application
@@ -16,6 +19,7 @@ namespace EComTest.Application
             {
                 c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             });
+
 
             return services;
         }

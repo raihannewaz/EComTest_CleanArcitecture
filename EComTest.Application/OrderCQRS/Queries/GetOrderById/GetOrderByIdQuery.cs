@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.OrderCQRS.Queries.GetOrderById
 {
-    public class GetOrderByIdQuery: IRequest<Order>
+    public class GetOrderByIdQuery: IRequest<List<Order>>
     {
         public int OrdId { get; set; }
+
+        public string storeProc = "EXEC GetOrderById";
     }
 }

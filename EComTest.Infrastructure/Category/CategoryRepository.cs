@@ -40,9 +40,22 @@ namespace EComTest.Infrastructure.CategoryProduct
             return id;
         }
 
+        public async Task<List<Category>> GetAll(string a)
+        {
+            var data = await _context.Categories.FromSqlRaw(a).ToListAsync();
+            return data;
+        }
+
         public async Task<Category> GetById(int id)
         {
             return await _context.Categories.FirstOrDefaultAsync(a => a.CategoryId == id);
+        }
+
+        public async Task<List<Category>> GetByIdForQuery(string a, int id)
+        {
+            var data  =  await _context.Categories.FromSqlRaw(a + " "+id).ToListAsync();
+
+            return data;
         }
 
         public async Task<int> UpdateAsync(int id, Category updatedCategory)

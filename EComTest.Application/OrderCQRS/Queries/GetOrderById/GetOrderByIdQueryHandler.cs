@@ -8,11 +8,19 @@ using System.Threading.Tasks;
 
 namespace EComTest.Application.OrderCQRS.Queries.GetOrderById
 {
-    public class GetOrderByIdQueryHandler : IRequestHandler<GetOrderByIdQuery, Order>
+    public class GetOrderByIdQueryHandler : IRequestHandler<GetOrderByIdQuery, List<Order>>
     {
-        public Task<Order> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
+        private readonly IOrderRepository _orderRepository;
+
+        public GetOrderByIdQueryHandler(IOrderRepository orderRepository)
         {
-            throw new NotImplementedException();
+            _orderRepository = orderRepository;
         }
+        public async Task<List<Order>> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
+        {
+            return await _orderRepository.GetByIdForQuery(request.storeProc,request.OrdId);
+        }
+
+
     }
 }

@@ -18,7 +18,10 @@ namespace EComTest.Application.CategoryCQRS.Command.CreateCategory
         public async Task<Category> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             var category = new Category();
-
+            if (string.IsNullOrEmpty(request.CategoryName))
+            {
+                throw new InvalidDataException("Category Name Required!");
+            }
             category.CreateCategory(request.CategoryName);
 
             var result = await _repository.CreateAsync(category);
