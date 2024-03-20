@@ -19,7 +19,7 @@ namespace EComTest.Infrastructure.CategoryProduct
             this._context = context;
         }
 
-        public async Task<Category> CreateAsync(Category category)
+        public async Task<Domain.CategoryEntity.Category> CreateAsync(Domain.CategoryEntity.Category category)
         {
 
             await _context.Categories.AddAsync(category);
@@ -40,25 +40,25 @@ namespace EComTest.Infrastructure.CategoryProduct
             return id;
         }
 
-        public async Task<List<Category>> GetAll(string a)
+        public async Task<List<Domain.CategoryEntity.Category>> GetAll(string a)
         {
             var data = await _context.Categories.FromSqlRaw(a).ToListAsync();
             return data;
         }
 
-        public async Task<Category> GetById(int id)
+        public async Task<Domain.CategoryEntity.Category> GetById(int id)
         {
             return await _context.Categories.FirstOrDefaultAsync(a => a.CategoryId == id);
         }
 
-        public async Task<List<Category>> GetByIdForQuery(string a, int id)
+        public async Task<List<Domain.CategoryEntity.Category>> GetByIdForQuery(string a, int id)
         {
             var data  =  await _context.Categories.FromSqlRaw(a + " "+id).ToListAsync();
 
             return data;
         }
 
-        public async Task<int> UpdateAsync(int id, Category updatedCategory)
+        public async Task<int> UpdateAsync(int id, Domain.CategoryEntity.Category updatedCategory)
         {
             var category = await GetById(id);
 

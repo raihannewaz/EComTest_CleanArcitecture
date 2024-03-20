@@ -9,16 +9,12 @@ namespace EComTest.Domain.ProductEntity
 {
     public class Product
     {
-        [Key]
         public int ProductId { get; private set; }
         public string? ProductName { get; private set; }
         public decimal Price { get; private set;}
+
         public int CategoryId { get; private set; }
-
-        //[JsonIgnore]
         public Category? Category { get;  set; }
-
-        public virtual ICollection<Order>? Order { get; set; }
 
 
 

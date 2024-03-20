@@ -8,7 +8,6 @@ namespace EComTest.Domain.OrderEntity
 {
     public class Order
     {
-        [Key]
         public int OrderId { get; private set; }
 
         public int Quantity { get; private set; }
@@ -17,7 +16,6 @@ namespace EComTest.Domain.OrderEntity
 
         public int ProductId { get; private set; }
 
-        //[JsonIgnore]
         public Product? Product { get; set; }
 
 

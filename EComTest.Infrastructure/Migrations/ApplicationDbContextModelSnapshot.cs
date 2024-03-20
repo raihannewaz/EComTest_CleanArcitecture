@@ -30,11 +30,13 @@ namespace EComTest.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
 
                     b.Property<string>("CategoryName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EComTest.Domain.OrderEntity.Order", b =>
@@ -58,7 +60,7 @@ namespace EComTest.Infrastructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("EComTest.Domain.ProductEntity.Product", b =>
@@ -76,19 +78,21 @@ namespace EComTest.Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ProductName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("EComTest.Domain.OrderEntity.Order", b =>
                 {
                     b.HasOne("EComTest.Domain.ProductEntity.Product", "Product")
-                        .WithMany("Order")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -99,22 +103,12 @@ namespace EComTest.Infrastructure.Migrations
             modelBuilder.Entity("EComTest.Domain.ProductEntity.Product", b =>
                 {
                     b.HasOne("EComTest.Domain.CategoryEntity.Category", "Category")
-                        .WithMany("Product")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("EComTest.Domain.CategoryEntity.Category", b =>
-                {
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("EComTest.Domain.ProductEntity.Product", b =>
-                {
-                    b.Navigation("Order");
                 });
 #pragma warning restore 612, 618
         }

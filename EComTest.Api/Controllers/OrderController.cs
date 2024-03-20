@@ -29,35 +29,17 @@ namespace EComTest.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var options = new JsonSerializerOptions
-            {
-                ReferenceHandler = ReferenceHandler.Preserve
-            };
-
+      
             var data = await _mediatr.Send(new GetOrdersQuery());
-            var json = JsonSerializer.Serialize(data, options);
-            return Ok(json);
-
-
-            //var data = await _mediatr.Send(new GetOrdersQuery());
-            //return Ok(data);
+            return Ok(data);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var options = new JsonSerializerOptions
-            {
-                ReferenceHandler = ReferenceHandler.Preserve
-            };
-
             var data = await _mediatr.Send(new GetOrderByIdQuery() { OrdId = id });
-            if (data == null)
-            {
-                return NotFound();
-            }
-            var json = JsonSerializer.Serialize(data, options);
-            return Ok(json);
+
+            return Ok(data);
         }
 
 

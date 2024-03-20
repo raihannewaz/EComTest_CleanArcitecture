@@ -6,11 +6,9 @@ namespace EComTest.Domain.CategoryEntity
 {
     public class Category
     {
-        [Key]
+
         public int CategoryId { get; private set; }
         public string? CategoryName { get; private set; }
-
-        public ICollection<Product>? Product { get; set; }
 
 
 

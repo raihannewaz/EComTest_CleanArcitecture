@@ -50,7 +50,7 @@ BEGIN
 END
 GO
 
-EXEC GetProductById 2
+EXEC GetProductById2
 GO
 
 
