@@ -14,7 +14,7 @@ namespace EComTest.Domain.CategoryEntity
 
 
 
-        public void CreateCategory(string categoryName)
+        public void CreateOrUpdateCategoryName(string categoryName)
         {
             CategoryName = categoryName;
         }
@@ -25,11 +25,6 @@ namespace EComTest.Domain.CategoryEntity
             CategoryName = categoryName;
         }
 
-
-        public void UpdateCategoryName(string newName)
-        {
-            CategoryName = newName;
-        }
 
 
     }

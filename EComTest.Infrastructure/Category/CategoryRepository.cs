@@ -69,7 +69,7 @@ namespace EComTest.Infrastructure.CategoryProduct
 
             if (!string.IsNullOrWhiteSpace(updatedCategory.CategoryName))
             {
-                category.UpdateCategoryName(updatedCategory.CategoryName);
+                category.CreateOrUpdateCategoryName(updatedCategory.CategoryName);
             }
 
             await _context.SaveChangesAsync();

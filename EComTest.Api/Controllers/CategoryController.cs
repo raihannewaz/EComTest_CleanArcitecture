@@ -3,9 +3,7 @@ using EComTest.Application.CategoryCQRS.Command.DeleteCategory;
 using EComTest.Application.CategoryCQRS.Command.UpdateCategory;
 using EComTest.Application.CategoryCQRS.Queries.GetCategories;
 using EComTest.Application.CategoryCQRS.Queries.GetCategoryById;
-using EComTest.Application.OrderCQRS.Command.DeleteOrder;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EComTest.Api.Controllers
@@ -57,7 +55,7 @@ namespace EComTest.Api.Controllers
 
             var data = await _mediatr.Send(command);
 
-            return Ok(data);
+            return Ok("Updated!");
         }
 
 
@@ -65,7 +63,7 @@ namespace EComTest.Api.Controllers
         public async Task<IActionResult> DeleteAsync(int id)
         {
             await _mediatr.Send(new DeleteCategoryCommand() { CatId = id });
-            return NoContent();
+            return Ok("Deleted!");
 
         }
     }

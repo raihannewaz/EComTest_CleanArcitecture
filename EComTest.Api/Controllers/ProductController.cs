@@ -61,14 +61,14 @@ namespace EComTest.Api.Controllers
 
             var data = await _mediatr.Send(command);
 
-            return Ok(data);
+            return Ok("Updated!");
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             await _mediatr.Send(new DeleteProductCommand() { prodId = id });
-            return NoContent();
+            return Ok("Deleted!");
 
         }
     }

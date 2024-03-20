@@ -22,7 +22,7 @@ namespace EComTest.Application.CategoryCQRS.Command.CreateCategory
             {
                 throw new InvalidDataException("Category Name Required!");
             }
-            category.CreateCategory(request.CategoryName);
+            category.CreateOrUpdateCategoryName(request.CategoryName);
 
             var result = await _repository.CreateAsync(category);
             return result;
