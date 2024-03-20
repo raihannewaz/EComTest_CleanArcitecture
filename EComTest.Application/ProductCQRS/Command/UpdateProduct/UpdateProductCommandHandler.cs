@@ -20,11 +20,31 @@ namespace EComTest.Application.ProductCQRS.Command.UpdateProduct
         public async Task<int> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
 
-            var product = new Product();
-            product.UpdateProduct(request.ProdId , request.ProductName, request.Price, request.CategoryId);
+            var product = await _productRepository.GetById(request.ProdId);
 
-            return await _productRepository.UpdateAsync(request.ProdId, product);
+            if (product == null)
+            {
+                throw new ArgumentException($"Product with ID {request.ProdId} not found.");
+            }
 
+            if (!string.IsNullOrWhiteSpace(request.ProductName))
+            {
+                product.UpdateProductName(request.ProductName);
+            }
+
+            if (request.Price != 0)
+            {
+                product.UpdateProductPrice(request.Price);
+            }
+
+            if (request.CategoryId != 0)
+            {
+                product.UpdateCategoryId(request.CategoryId);
+            }
+
+            await _productRepository.SaveChagnes();
+
+            return request.ProdId;
         }
 
 

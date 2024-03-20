@@ -21,12 +21,12 @@ namespace EComTest.Application.CategoryCQRS.Command.UpdateCategory
         public async Task<int> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
 
-            var category = new Category();
+            var category = await _repository.GetById(request.CategoryId);
 
-            category.UpdateCategory(request.CategoryId, request.CategoryName);
+            category.UpdateCategory(request.CategoryName);
+            await _repository.SaveChagnes();
 
-            return await _repository.UpdateAsync(request.CategoryId, category);
-            
+            return request.CategoryId;
 
         }
     }

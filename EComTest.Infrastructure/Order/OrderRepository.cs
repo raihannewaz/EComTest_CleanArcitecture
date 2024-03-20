@@ -78,31 +78,12 @@ namespace EComTest.Infrastructure.Order
 
         }
 
-        public async Task<int> UpdateAsync(int id, Domain.OrderEntity.Order updateOrder)
+        public async Task SaveChagnes()
         {
-            var order = await GetById(id);
-
-            if (order == null)
-            {
-                throw new ArgumentException($"Order with ID {id} not found.");
-            }
-
-            if (updateOrder.Quantity != 0)
-            {
-                order.UpdateQuantityAndTotal(updateOrder.Quantity);
-                await order.CalculateTotalAsync(_productRepository);
-            }
-
-
-            if (updateOrder.ProductId != 0)
-            {
-                order.UpdateProductId(updateOrder.ProductId);
-            }
-
             await _context.SaveChangesAsync();
-
-            return id;
         }
+
+       
 
 
     }

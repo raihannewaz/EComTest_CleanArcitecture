@@ -17,21 +17,24 @@ namespace EComTest.Domain.ProductEntity
         public Category? Category { get;  set; }
 
 
-
-        public void  CreateProduct(string name, decimal price, int catId)
+        private Product()
         {
-            ProductName = name;
-            Price = price;
-            CategoryId = catId;
+
         }
 
-        public void UpdateProduct(int id, string name, decimal price, int catId)
+        private Product(string? productName, decimal price, int categoryId)
         {
-            ProductId = id;
-            ProductName = name;
+            ProductName = productName;
             Price = price;
-            CategoryId = catId;
+            CategoryId = categoryId;
         }
+
+        public static Product  CreateProduct(string name, decimal price, int catId)
+        {
+            return new Product(name, price, catId);
+        }
+
+ 
 
 
         public void UpdateProductName(string newName)

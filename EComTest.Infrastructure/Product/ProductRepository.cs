@@ -58,33 +58,9 @@ namespace EComTest.Infrastructure.Product
             return data;
         }
 
-        public async Task<int> UpdateAsync(int id, Domain.ProductEntity.Product updateProduct)
+        public async Task SaveChagnes()
         {
-            var product = await GetById(id);
-
-            if (product == null)
-            {
-                throw new ArgumentException($"Product with ID {id} not found.");
-            }
-
-            if (!string.IsNullOrWhiteSpace(updateProduct.ProductName))
-            {
-                product.UpdateProductName(updateProduct.ProductName);
-            }
-
-            if (updateProduct.Price != null)
-            {
-                product.UpdateProductPrice(updateProduct.Price);
-            }
-
-            if (updateProduct.CategoryId != null)
-            {
-                product.UpdateCategoryId(updateProduct.CategoryId);
-            }
-
             await _context.SaveChangesAsync();
-
-            return id;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace EComTest.Domain.ProductEntity
         Task<List<Product>> GetByIdForQuery(string a, int id);
         Task<Product> CreateAsync(Product product);
         Task<Product> GetById(int id);
-        Task<int> UpdateAsync(int id, Product product);
         Task<int> DeleteAsync(int id);
+        Task SaveChagnes();
     }
 }

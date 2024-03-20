@@ -19,7 +19,6 @@ namespace EComTest.Application.ProductCQRS.Command.CreateProduct
 
         public Task<Product> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var product = new Product();
 
             if (string.IsNullOrEmpty(request.ProductName))
             {
@@ -36,7 +35,7 @@ namespace EComTest.Application.ProductCQRS.Command.CreateProduct
                 throw new InvalidDataException("Product Category Required");
             }
 
-            product.CreateProduct(request.ProductName, request.Price, request.CategoryId);
+            var product = Product.CreateProduct(request.ProductName, request.Price, request.CategoryId);
 
             var result = _productRepository.CreateAsync(product);
             return result;

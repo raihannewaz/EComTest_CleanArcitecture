@@ -14,8 +14,8 @@ namespace EComTest.Domain.CategoryEntity
         Task<List<Category>> GetByIdForQuery(string a, int id);
         Task<Category> CreateAsync(Category category);
         Task<Category> GetById(int id);
-        Task<int> UpdateAsync(int id,Category category);
         Task<int> DeleteAsync(int id);
+        Task SaveChagnes();
 
     }
 }

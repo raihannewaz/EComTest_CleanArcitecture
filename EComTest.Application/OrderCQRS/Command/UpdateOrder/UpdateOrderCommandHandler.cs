@@ -23,11 +23,27 @@ namespace EComTest.Application.OrderCQRS.Command.UpdateOrder
 
         public async Task<int> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = new Order();
-            order.UpdateOrder(request.OrderId, request.Quantity, request.ProductId);
-            
+            var order = await _orderRepository.GetById(request.OrderId);
 
-            return await _orderRepository.UpdateAsync(request.OrderId, order);
+            if (order == null)
+            {
+                throw new ArgumentException($"Order with ID {request.OrderId} not found.");
+            }
+
+            if (request.Quantity != 0)
+            {
+                order.UpdateQuantityAndTotal(request.Quantity);
+                await Order.CalculateTotalAsync(_product);
+            }
+
+            if (request.ProductId != 0)
+            {
+                order.UpdateProductId(request.ProductId);
+            }
+
+            await _orderRepository.SaveChagnes();
+
+            return request.OrderId;
         }
     }
 }

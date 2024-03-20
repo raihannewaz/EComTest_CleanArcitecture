@@ -20,43 +20,39 @@ namespace EComTest.Domain.OrderEntity
 
 
 
+        private Order() { }
 
-
-
-        public void CreateOrder(int quantity, int productId)
+        private Order(int quantity, int productId)
         {
             Quantity = quantity;
             ProductId = productId;
         }
 
-
-        public async Task CalculateTotalAsync(IProductRepository productRepository)
+        public static Order CreateOrder(int quantity, int productId)
         {
-            if (ProductId == 0 || productRepository == null)
+            return new Order(quantity, productId); 
+        }
+
+
+        public static async Task CalculateTotalAsync(IProductRepository productRepository)
+        {
+            var o=new Order();
+
+            if (o.ProductId == 0 || productRepository == null)
             {
                 throw new InvalidOperationException("ProductId or product repository is not set.");
             }
 
-            var product = await productRepository.GetById(ProductId);
+            var product = await productRepository.GetById(o.ProductId);
             if (product == null)
             {
-                throw new InvalidOperationException($"Product with ID {ProductId} not found.");
+                throw new InvalidOperationException($"Product with ID {o.ProductId} not found.");
             }
 
-            Total = Quantity * product.Price;
+            o.Total = o.Quantity * product.Price;
         }
 
 
-
-
-        public void UpdateOrder(int orderid, int quantity, int productId)
-        {
-
-            OrderId = orderid;
-            Quantity = quantity;
-            ProductId = productId;
-
-        }
 
         public void UpdateQuantityAndTotal(int quantity)
         {

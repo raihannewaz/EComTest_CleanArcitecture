@@ -22,9 +22,9 @@ namespace EComTest.Application.OrderCQRS.Command.CreateOrder
 
         public async Task<Order> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var order = new Order();
-            order.CreateOrder(request.Quantity, request.ProductId);
-            await order.CalculateTotalAsync(_product);
+           
+            var order = Order.CreateOrder(request.Quantity, request.ProductId);
+            await Order.CalculateTotalAsync(_product);
 
             return await _orderRepository.CreateAsync(order);
         }

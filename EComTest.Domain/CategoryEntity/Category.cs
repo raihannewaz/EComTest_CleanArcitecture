@@ -10,19 +10,28 @@ namespace EComTest.Domain.CategoryEntity
         public int CategoryId { get; private set; }
         public string? CategoryName { get; private set; }
 
-
-
-        public void CreateOrUpdateCategoryName(string categoryName)
+        private Category()
         {
-            CategoryName = categoryName;
+
         }
 
-        public void UpdateCategory(int id, string categoryName)
+        private Category(string name)
         {
-            CategoryId = id;
-            CategoryName = categoryName;
+            CategoryName = name;
         }
 
+        public static Category Create(string name)
+        {
+            return new Category(name);
+        }
+
+
+
+        public void UpdateCategory(string categoryName)
+        {
+
+            CategoryName = categoryName;
+        }
 
 
     }

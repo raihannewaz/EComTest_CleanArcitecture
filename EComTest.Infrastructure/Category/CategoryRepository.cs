@@ -53,30 +53,17 @@ namespace EComTest.Infrastructure.CategoryProduct
 
         public async Task<List<Domain.CategoryEntity.Category>> GetByIdForQuery(string a, int id)
         {
-            var data  =  await _context.Categories.FromSqlRaw(a + " "+id).ToListAsync();
+            var data  =  await _context.Categories.FromSqlRaw(a + " " + id).ToListAsync();
 
             return data;
         }
 
-        public async Task<int> UpdateAsync(int id, Domain.CategoryEntity.Category updatedCategory)
+        public async Task SaveChagnes()
         {
-            var category = await GetById(id);
-
-            if (category == null)
-            {
-                throw new ArgumentException($"Category with ID {id} not found.");
-            }
-
-            if (!string.IsNullOrWhiteSpace(updatedCategory.CategoryName))
-            {
-                category.CreateOrUpdateCategoryName(updatedCategory.CategoryName);
-            }
-
             await _context.SaveChangesAsync();
-
-            return id;
-
         }
+
+       
 
     }
 }
