@@ -1,6 +1,8 @@
 ﻿using EComTest.Domain.OrderEntity;
 using EComTest.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,8 @@ namespace EComTest.Infrastructure.Order
 
         public async Task<Domain.OrderEntity.Order> CreateAsync(Domain.OrderEntity.Order order)
         {
+            
+
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
             return order;
@@ -35,6 +39,14 @@ namespace EComTest.Infrastructure.Order
             }
 
             return id;
+        }
+
+        public async Task<List<Domain.OrderEntity.Order>> GetAll(string a)
+        {
+            return await _context.Orders.FromSqlRaw(a)
+              .Include(o => o.Product)
+                  .ThenInclude(p => p.Category)
+              .ToListAsync();
         }
 
         public async Task<Domain.OrderEntity.Order> GetById(int id)
@@ -65,5 +77,7 @@ namespace EComTest.Infrastructure.Order
 
             return id;
         }
+
+
     }
 }

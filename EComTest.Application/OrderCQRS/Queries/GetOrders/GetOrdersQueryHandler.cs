@@ -1,4 +1,5 @@
 ﻿using EComTest.Domain.OrderEntity;
+using EComTest.Domain.ProductEntity;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,15 @@ namespace EComTest.Application.OrderCQRS.Queries.GetOrders
 {
     public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, List<Order>>
     {
-        public Task<List<Order>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
+        private readonly IOrderRepository _orderRepository;
+
+        public GetOrdersQueryHandler(IOrderRepository orderRepository)
         {
-            throw new NotImplementedException();
+            _orderRepository = orderRepository;
+        }
+        public async Task<List<Order>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
+        {
+            return await _orderRepository.GetAll(request.sqlQuery);
         }
     }
 }
